@@ -31,7 +31,16 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
     try {
-    } catch (err) {}
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData,
+      });
+    } catch (err) {
+      console.log('error creating user', err.message);
+    }
   }
+  return userRef;
 };
 export default firebase;
