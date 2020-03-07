@@ -43,7 +43,7 @@ class SignUp extends React.Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
-  renser() {
+  render() {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className="sign-up">
