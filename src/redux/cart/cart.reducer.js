@@ -1,10 +1,11 @@
+import CartActionTypes from './cart.types';
 const INITIAL_STATE = {
   hiddin: true,
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'TOGGLE_CART_HIDDEN':
+    case CartActionTypes.TOGGLE_CART_HIDDEN:
       return {
         ...state,
         hiddin: !state.hiddin,
